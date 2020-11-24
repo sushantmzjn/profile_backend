@@ -22,10 +22,8 @@ router.post('/signup', (req, res, next) => {
                     if (token) {
                         admin.updateOne({ _id: data._id }, { $set: { token: token } }).then(() => {
                             res.json({ message: "signup success !!!", token: token })
-
                         })
                     }
-
                 }).catch(next)
 
             });
